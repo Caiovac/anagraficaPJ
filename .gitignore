@@ -1,0 +1,9 @@
+# File di sistema
+.DS_Store
+Thumbs.db
+
+# Node modules (quando farai il frontend React)
+node_modules/
+
+# Log generici
+*.log
