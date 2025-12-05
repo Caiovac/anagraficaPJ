@@ -3,47 +3,58 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Persona;
 use Illuminate\Http\Request;
 
 class PersonaController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * GET /api/persone
+     * Ritorna la lista di tutte le persone
      */
     public function index()
     {
-        //
+        // SELECT * FROM persone
+        return Persona::all();
     }
 
     /**
-     * Store a newly created resource in storage.
+     * GET /api/persone/{id}
+     * Ritorna i dati di UNA persona
+     */
+    public function show($id)
+    {
+        // SELECT * FROM persone WHERE id = ?
+        // se non la trova → 404 automatico
+        return Persona::findOrFail($id);
+    }
+
+    
+
+    /**
+     * POST /api/persone
+     * Crea una nuova persona
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
-     * Display the specified resource.
+     * PUT /api/persone/{id}
+     * Aggiorna una persona esistente
      */
-    public function show(string $id)
+    public function update(Request $request, $id)
     {
-        //
+       
     }
 
     /**
-     * Update the specified resource in storage.
+     * DELETE /api/persone/{id}
+     * Elimina una persona
      */
-    public function update(Request $request, string $id)
+    public function destroy($id)
     {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 }
