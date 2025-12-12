@@ -15,7 +15,7 @@ class PersonaController extends Controller
     public function index()
     {
         // SELECT * FROM persone
-        return Persona::all();
+        return Persona::with(['indirizzo', 'familiari'])->get();
     }
 
     /**
