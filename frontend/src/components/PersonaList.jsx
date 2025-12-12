@@ -1,5 +1,3 @@
-// src/components/PersonaList.jsx
-
 function PersonaList({ persone, loading, onSelectPersona }) {
   return (
     <section>

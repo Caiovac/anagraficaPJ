@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { fetchPersone } from "./api";
 import PersonaDetail from "./components/PersonaDetail";
 import PersonaList from "./components/PersonaList";
-import "bootstrap/dist/css/bootstrap.min.css"; // <--- IMPORTANTE
-
+import PersonaDetail from "./components/PersonaDetail";
+import PersonaList from "./components/PersonaList";
 
 function App() {
   const [persone, setPersone] = useState([]);
