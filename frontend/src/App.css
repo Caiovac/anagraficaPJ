@@ -1,117 +1,23 @@
-/* ===== Layout generale della pagina ===== */
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-color: #f3f4f6; /* grigio chiaro di sfondo */
-}
-
-.app {
-  max-width: 1000px;      /* larghezza massima contenuto */
-  margin: 40px auto;      /* centra orizzontalmente */
-  padding: 20px;
-}
-
-.app-title {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-/* ===== Layout due colonne (lista a sinistra, dettaglio a destra) ===== */
-
-.layout-two-columns {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start; /* allinea in alto le due colonne */
-}
-
-.layout-column {
-  flex: 1;    /* le due colonne occupano metà spazio ciascuna */
-  min-width: 0;
-}
-
-/* ===== Card semplice per lista e dettaglio ===== */
-
-.card {
-  background-color: #ffffff;
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.section-title {
-  margin-top: 0;
-  margin-bottom: 12px;
-}
-
-/* ===== Messaggi di testo (helper, errori) ===== */
-
-.helper-text {
-  font-size: 0.9rem;
-  color: #6b7280; /* grigio */
-}
-
-.error-box {
-  background-color: #fee2e2;
-  border: 1px solid #fecaca;
-  color: #991b1b;
-  padding: 8px 12px;
-  border-radius: 6px;
-  margin-bottom: 16px;
-}
-
-/* ===== Tabella anagrafica ===== */
-
-.anag-table {
+html, body, #root {
+  height: 100%;
   width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9rem;
-}
-
-.anag-table th,
-.anag-table td {
-  padding: 8px;
-  border-bottom: 1px solid #e5e7eb;
-  text-align: left;
-}
-
-/* ===== Bottone sul nome (link cliccabile) ===== */
-
-.name-button {
-  background: none;
-  border: none;
-  padding: 0;
   margin: 0;
-  font: inherit;
-  color: #0d6efd;     /* blu stile Bootstrap */
-  cursor: pointer;
+  background: #262b33;
 }
 
-.name-button:hover {
-  text-decoration: underline;
+/* 1) Sfondo pagina (un grigio unico) */
+.page {
+  min-height: 100vh;
+  background: #262b33;
 }
 
-/* ===== Animazione morbida del dettaglio ===== */
-
-.detail-content {
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  /* opzionale: blocca click quando non visibile */
-  pointer-events: none;
+/* 2) Titolo */
+.page-title {
+  color: #f1f5f9;
+  font-weight: 800;
 }
 
-.detail-content--visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-/* ===== Responsive: su schermi stretti le colonne vanno una sotto l'altra ===== */
-
-@media (max-width: 768px) {
-  .layout-two-columns {
-    flex-direction: column;
-  }
+/* 3) Un tocco “brand” sulle card (solo un bordo a sinistra) */
+.brand-card .card-header {
+  border-left: 4px solid #7fb1ff;
 }
